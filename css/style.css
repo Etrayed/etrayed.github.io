@@ -7,8 +7,7 @@
 }
 
 html {
-    background-image: url("../img/background.jpg");
-    background-size: cover;
+    background-color: #4B61D1;
     font-family: 'Source Code Pro', monospace;
 }
 
