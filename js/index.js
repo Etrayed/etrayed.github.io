@@ -137,4 +137,10 @@ $(function () {
     clearConsole();
     setPrefix();
     registerCommands();
+
+    $("#github-btn").hover(() => {
+        $("#github-btn").attr("src", "img/Github-Mark-Light-64px.png");
+    }, () => {
+        $("#github-btn").attr("src", "img/Github-Mark-64px.png");
+    });
 });

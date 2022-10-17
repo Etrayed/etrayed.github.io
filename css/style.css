@@ -31,7 +31,6 @@ html {
     padding-top: 0.5%;
     position: relative;
     left: 0;
-    /*padding-left: 0.5%;*/
     padding-bottom: 0.25%;
     color: white;
     border-bottom: 2px solid rgba(255, 255, 255, 0.35);
@@ -108,4 +107,15 @@ html {
 
 a:visited {
     color: blue;
+}
+
+#github-btn-base {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 64px;
+    height: 64px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
