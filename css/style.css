@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#cli-base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 0 0 17px 0px #545454;
+    box-shadow: 0px 0px 17px 0px #545454;
+    background-color: #121212;
+    word-break: break-all;
+}
+
+#cli-header {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 0.5%;
+    position: relative;
+    left: 0;
+    /*padding-left: 0.5%;*/
+    padding-bottom: 0.25%;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#cli-content {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 95%;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+}
+
+#cli-content::-webkit-scrollbar {
+    width: 0;
+}
+
+.cli-text {
+    position: relative;
+    left: 0;
+    padding-left: 0.5%;
+    color: white;
+}
+
+#output-box {
+    padding-top: 0.5%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    max-width: 99.5%;
+    max-height: 99.5%;
+}
+
+#input-box {
+    padding-top: 0.5%;
+    font-size: 0;
+    overflow: hidden;
+    max-width: 99.5%;
+    max-height: 99.5%;
+}
+
+#input-box .cli-text {
+    font-size: 16px;
+    display: inline;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+}
+
+#input-prefix {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#input-text {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+#input-cursor {
+    font-weight: bolder;
+    padding-left: 0;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+a:visited {
+    color: blue;
+}
