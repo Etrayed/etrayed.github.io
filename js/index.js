@@ -118,7 +118,7 @@ function registerCommands() {
         printToConsole("My name is Miklas and I'm a 17 year old German programming enthusiast. I'm currently in 12th grade and working on my Abitur.");
         printToConsole("");
     }
-} // PING, IP command
+}
 
 function wrapLink(link, text = link) {
     return "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"" + link + "\"><b>" + text + "</b></a>";
@@ -136,6 +136,5 @@ $(function () {
 
     clearConsole();
     setPrefix();
-    //obtainAvailableCommands(username, null);
     registerCommands();
 });
