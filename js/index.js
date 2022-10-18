@@ -94,14 +94,15 @@ function onKeyDown(e) {
 
 function registerCommands() {
     commandMap["help"] = (_) => {
-        printToConsole("\t<b>clear</b> - Clears the console");
         printToConsole("\t<b>github</b> - My GitHub Account");
         printToConsole("\t<b>twitter</b> - My Twitter Account");
         printToConsole("\t<b>ide</b> - The IDE I'm using");
         printToConsole("\t<b>about</b> - Who am I")
         printToConsole("");
+        printToConsole("\t<b>clear</b> - Clears the console");
+        printToConsole("\t<b>ip</b> - Shows your IP")
+        printToConsole("");
     };
-    commandMap["clear"] = (_) => clearConsole();
     commandMap["github"] = (_) => {
         printToConsole("GitHub: " + wrapLink("https://github.com/Etrayed/"));
         printToConsole("");
@@ -117,6 +118,24 @@ function registerCommands() {
     commandMap["about"] = (_) => {
         printToConsole("My name is Miklas and I'm a 17 year old German programming enthusiast. I'm currently in 12th grade and working on my Abitur.");
         printToConsole("");
+    }
+
+    commandMap["clear"] = (_) => clearConsole();
+    commandMap["ip"] = (_) => {
+        printToConsole("Getting IP... (Powered by ipify.org)")
+        printToConsole("");
+
+        $.get("https://api.ipify.org", function(ipv4) {
+            printToConsole("IP (v4): " + ipv4);
+
+            $.get("https://api64.ipify.org", function(ipv6) {
+                if(ipv4 != ipv6) {
+                    printToConsole("IP (v6): " + ipv6);
+                }
+
+                printToConsole("");
+            });
+        });
     }
 }
 
