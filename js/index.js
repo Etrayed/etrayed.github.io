@@ -158,8 +158,8 @@ $(function () {
     registerCommands();
 
     $("#github-btn").hover(() => {
-        $("#github-btn").attr("src", "img/Github-Mark-Light-64px.png");
+        $("#github-btn").attr("src", "img/GitHub-Mark-Light-64px.png");
     }, () => {
-        $("#github-btn").attr("src", "img/Github-Mark-64px.png");
+        $("#github-btn").attr("src", "img/GitHub-Mark-64px.png");
     });
 });
