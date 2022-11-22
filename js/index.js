@@ -92,6 +92,8 @@ function onKeyDown(e) {
     inputSpan.text(newText);
 }
 
+var advancedMode = window.localStorage.getItem("advancedMode");
+
 function registerCommands() {
     commandMap["help"] = (_) => {
         printToConsole("\t<b>github</b> - My GitHub Account");
@@ -136,6 +138,14 @@ function registerCommands() {
                 printToConsole("");
             });
         });
+    }
+
+    commandMap["advanced"] = (_) => {
+        advancedMode = !advancedMode;
+
+        printToConsole("Advanced mode: <a style=\"color:" + (advancedMode ? "#0BDA51\">ON" : "#FF2400\">OFF") + "</a>");
+
+        window.localStorage.setItem("advancedMode", advancedMode);
     }
 }
 
