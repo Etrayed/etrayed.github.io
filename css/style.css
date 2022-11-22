@@ -90,19 +90,17 @@ html {
     -webkit-user-select: none;
 }
 
-#input-text {
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+#input-text-field {
+    background-color: transparent;
+    border: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    color: white;
+    padding-left: 0.5%;
 }
 
-#input-cursor {
-    font-weight: bolder;
-    padding-left: 0;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
+*:focus {
+    outline: none;
 }
 
 a:visited {

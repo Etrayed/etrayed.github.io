@@ -15,8 +15,7 @@
         <p id="output-box" class="cli-text"></p>
         <div id="input-box">
             <span id="input-prefix" class="cli-text"></span>
-            <span id="input-text" class="cli-text"></span>
-            <span id="input-cursor" class="cli-text">_</span>
+            <input type="text" spellcheck="false" onblur="this.focus()" autofocus onkeydown="checkSubmit(event)" id="input-text-field" class="cli-text">
         </div>
     </div>
 </div>

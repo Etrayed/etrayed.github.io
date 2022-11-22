@@ -42,54 +42,18 @@ function setPrefix() {
     $("#input-prefix").text("guest@etrayed.dev>");
 }
 
-function onKeyDown(e) {
-    var inputSpan = $("#input-text");
-    var newText = inputSpan.text();
+function checkSubmit(event) {
+    var text = event.target.value;
 
-    if (e.key == "Backspace") {
-        newText = newText.substring(0, newText.length - 1);
-
-        if (window.getSelection) {
-            window.getSelection().removeAllRanges();
-        } else if (document.selection) {
-            document.selection.empty();
-        }
-    } else if (e.key == "Enter" && newText.length != 0) {
-        printToConsole($("#input-prefix").text() + " " + newText);
+    if(event.key == "Enter" && text.length != 0) {
+        printToConsole($("#input-prefix").text() + " " + text);
         printToConsole("");
-        processCommand(newText);
+        processCommand(text);
 
-        newText = "";
-    } else if (e.which == 65 && e.ctrlKey) {
-        if (document.selection) { // IE
-            var range = document.body.createTextRange();
-
-            range.moveToElementText(inputSpan.get());
-            range.select();
-        } else if (window.getSelection) {
-            var range = document.createRange();
-            range.selectNode(inputSpan.get());
-
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-        }
-    } else if ((e.which == 67 || e.which == 86) && e.ctrlKey) {
-        // do default
-    } else if ((e.which >= 48 && e.which <= 90) || (e.which >= 96 && e.which <= 111) || e.key.length == 1 && !(e.ctrlKey || e.shiftKey || e.metaKey)) {
-        newText += e.key;
-
-        if (window.getSelection) {
-            window.getSelection().removeAllRanges();
-        } else if (document.selection) {
-            document.selection.empty();
-        }
+        event.target.value = "";
     }
 
-    if (inputSpan.text() != newText) {
-        scrollToBottom();
-    }
-
-    inputSpan.text(newText);
+    scrollToBottom();
 }
 
 var advancedMode = window.localStorage.getItem("advancedMode");
@@ -154,15 +118,6 @@ function wrapLink(link, text = link) {
 }
 
 $(function () {
-    window.setInterval(() => $("#input-cursor").toggle(), 500); // Cursor visibility task
-    window.onkeydown = onKeyDown;
-
-    $(document).on("paste", (event) => {
-        var inputText = $("#input-text");
-
-        inputText.text(inputText.text() + event.originalEvent.clipboardData.getData("Text"));
-    });
-
     clearConsole();
     setPrefix();
     registerCommands();
